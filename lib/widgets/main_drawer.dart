@@ -31,7 +31,7 @@ class MainDrawer extends StatelessWidget {
                     size: 50, color: Theme.of(context).colorScheme.primary),
                 const SizedBox(width: 18),
                 Text(
-                  'Meals',
+                  'Let\'s Cook!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).colorScheme.primary,
                       ),
@@ -41,7 +41,7 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.restaurant_menu_rounded,
+              Icons.fastfood_rounded,
               size: 26,
               color: Theme.of(context).colorScheme.onBackground,
             ),
