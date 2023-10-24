@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 enum Filter { glutenFree, lactoseFree, vegetarian, vegan }
 
 class FiltersScreen extends StatefulWidget {
-  const FiltersScreen({super.key});
+  const FiltersScreen({super.key, required this.currentFilters});
+
+  final Map<Filter, bool> currentFilters;
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
@@ -12,8 +14,17 @@ class FiltersScreen extends StatefulWidget {
 class _FiltersScreenState extends State<FiltersScreen> {
   var _isGlutenFree = false;
   var _isLactoseFree = false;
-  var _isVegetarianFree = false;
-  var _isVeganFree = false;
+  var _isVegetarian = false;
+  var _isVegan = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _isGlutenFree = widget.currentFilters[Filter.glutenFree]!;
+    _isLactoseFree = widget.currentFilters[Filter.lactoseFree]!;
+    _isVegetarian = widget.currentFilters[Filter.vegetarian]!;
+    _isVegan = widget.currentFilters[Filter.vegan]!;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +37,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
           Navigator.of(context).pop({
             Filter.glutenFree: _isGlutenFree,
             Filter.lactoseFree: _isLactoseFree,
-            Filter.vegetarian: _isVegetarianFree,
-            Filter.vegan: _isVeganFree,
+            Filter.vegetarian: _isVegetarian,
+            Filter.vegan: _isVegan,
           });
           return false;
         },
@@ -54,10 +65,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-              value: _isVegetarianFree,
+              value: _isVegetarian,
               onChanged: (newValue) {
                 setState(() {
-                  _isVegetarianFree = newValue;
+                  _isVegetarian = newValue;
                 });
               },
               title: Text(
@@ -94,10 +105,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-              value: _isVeganFree,
+              value: _isVegan,
               onChanged: (newValue) {
                 setState(() {
-                  _isVeganFree = newValue;
+                  _isVegan = newValue;
                 });
               },
               title: Text(
