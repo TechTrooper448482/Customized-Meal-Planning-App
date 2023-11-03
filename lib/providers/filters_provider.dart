@@ -7,6 +7,10 @@ class FiltersNotifier extends StateNotifier<Map<Filter, bool>> {
       : super(
             Filter.values.asMap().map((key, value) => MapEntry(value, false)));
 
+  void setFilters(Map<Filter, bool> filters) {
+    state = filters;
+  }
+
   void toggleFilter(Filter filter, bool isActive) {
     state = {
       ...state,
