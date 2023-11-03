@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
+/// A widget that represents the main drawer of the app.
+/// This drawer contains the navigation items for the app.
+/// This widget is a stateless widget.
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key, required this.onSelectScreen});
 
   final void Function(String identifier) onSelectScreen;
 
   @override
+
+  /// Builds the main drawer widget.
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(

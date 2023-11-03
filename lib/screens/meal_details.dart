@@ -3,6 +3,7 @@ import 'package:meals_app/models/meal.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals_app/providers/favorites_provider.dart';
 
+/// A screen that displays the details of a meal.
 class MealDetailsScreen extends ConsumerWidget {
   const MealDetailsScreen({
     super.key,
@@ -12,6 +13,13 @@ class MealDetailsScreen extends ConsumerWidget {
   final Meal meal;
 
   @override
+
+  /// Builds the widget for the meal details screen.
+  ///
+  /// This method takes in a [BuildContext] and a [WidgetRef] as parameters.
+  /// The [BuildContext] is used to build the widget tree, and the [WidgetRef]
+  /// is used to obtain a reference to the current widget.
+
   Widget build(BuildContext context, WidgetRef ref) {
     final favoriteMeals = ref.watch(favoriteMealsProvider);
     final isFavorite = favoriteMeals.contains(meal);
@@ -44,6 +52,11 @@ class MealDetailsScreen extends ConsumerWidget {
                 ),
               );
             },
+
+            /// AnimatedSwitcher widget is used to animate the transition between two widgets
+            /// in the [icon] property of the widget.
+            ///
+            /// This code is located in the file path: /C:/Users/manta/AndroidStudioProjects/meals_app/lib/screens/meal_details.dart
             icon: AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
               transitionBuilder: (child, animation) => RotationTransition(

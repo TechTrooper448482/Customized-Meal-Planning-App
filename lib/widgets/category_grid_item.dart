@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/category.dart';
 
+/// A widget that represents a single category item in the category grid.
 class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem(
       {Key? key, required this.category, required this.onSelectedCategory})
@@ -10,6 +11,8 @@ class CategoryGridItem extends StatelessWidget {
   final void Function() onSelectedCategory;
 
   @override
+
+  /// Builds a widget tree that displays a grid item for a category.
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onSelectedCategory,
