@@ -6,6 +6,7 @@ import 'package:meals_app/widgets/main_drawer.dart';
 import 'package:meals_app/providers/meals_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals_app/providers/favorites_provider.dart';
+import 'package:meals_app/providers/filters_provider.dart';
 
 const kInitialFilters = {
   Filter.glutenFree: false,
@@ -25,16 +26,6 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
 
   Map<Filter, bool> _selectedFilters = kInitialFilters;
-
-  void _showInfoMessage(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 5),
-      ),
-    );
-  }
 
   void _selectPage(int index) {
     setState(() {
