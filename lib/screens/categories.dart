@@ -5,8 +5,6 @@ import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/widgets/category_grid_item.dart';
 
-/// FILEPATH: /c:/Users/manta/AndroidStudioProjects/meals_app/lib/screens/categories.dart
-/// This class represents the stateful widget for the categories screen.
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key, required this.availableMeals});
 
@@ -21,10 +19,6 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   late AnimationController _animationController;
 
   @override
-
-  /// Called when this object is inserted into the tree.
-  /// The framework will call this method exactly once for each [State] object it creates.
-
   void initState() {
     super.initState();
     _animationController = AnimationController(
@@ -37,25 +31,12 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   }
 
   @override
-
-  /// Called when this object is removed from the tree permanently.
-  /// The framework calls this method when this [State] object will never build again.
-  /// Override this method to perform any cleanup your [State] object needs before it is removed from the tree.
-  /// This method is called after [deactivate] and before [dispose].
-
   void dispose() {
     _animationController.dispose();
     super.dispose();
   }
 
-  /// This method is called when a category is selected and it navigates to the corresponding meals screen.
-  ///
-  /// Parameters:
-  /// - [context]: The build context of the widget.
-  /// - [category]: The selected category.
   void _selectCategory(BuildContext context, Category category) {
-    // implementation goes here
-
     final filteredMeals = widget.availableMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
@@ -71,11 +52,6 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   }
 
   @override
-
-  /// This method builds the widget for the categories screen.
-  /// It takes in a [BuildContext] and returns a [Widget].
-  /// The [BuildContext] is used to build the widget tree.
-
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _animationController,

@@ -3,7 +3,6 @@ import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/screens/meal_details.dart';
 import 'package:meals_app/widgets/meal_item.dart';
 
-/// A screen that displays a list of meals.
 class MealsScreen extends StatelessWidget {
   const MealsScreen({
     super.key,
@@ -14,14 +13,7 @@ class MealsScreen extends StatelessWidget {
   final String? title;
   final List<Meal> meals;
 
-  /// Selects a meal and navigates to the meal details screen.
-  ///
-  /// This method takes in a [BuildContext] and a [Meal] object as parameters.
-  /// It then navigates to the meal details screen, passing the selected meal
-  /// as an argument.
   void selectMeal(BuildContext context, Meal meal) {
-    // implementation here
-
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => MealDetailsScreen(
@@ -32,8 +24,6 @@ class MealsScreen extends StatelessWidget {
   }
 
   @override
-
-  /// Builds the widget tree for the meals screen.
   Widget build(BuildContext context) {
     Widget content = Center(
       child: Column(
@@ -56,7 +46,6 @@ class MealsScreen extends StatelessWidget {
       ),
     );
 
-    /// Checks if the list of meals is not empty.
     if (meals.isNotEmpty) {
       content = ListView.builder(
         itemCount: meals.length,

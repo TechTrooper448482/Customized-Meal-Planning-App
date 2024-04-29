@@ -2,24 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/providers/filters_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// A screen that displays filters for meals.
+
 class FiltersScreen extends ConsumerWidget {
   const FiltersScreen({super.key});
 
   @override
-
-  /// Builds the widget for the filters screen.
-  ///
-  /// This method takes in a [BuildContext] and a [WidgetRef] and returns a [Widget].
-
   Widget build(BuildContext context, WidgetRef ref) {
-    // implementation
-
     final filters = ref.watch(filtersProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Filters'),
+        title: const Text('Settings'),
       ),
       body: Column(
         children: [

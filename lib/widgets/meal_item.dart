@@ -3,7 +3,6 @@ import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-/// A widget that displays a single meal item.
 class MealItem extends StatelessWidget {
   const MealItem({
     super.key,
@@ -25,8 +24,6 @@ class MealItem extends StatelessWidget {
   }
 
   @override
-
-  /// Builds the widget tree for a single meal item.
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(10),
@@ -67,9 +64,7 @@ class MealItem extends StatelessWidget {
                       meal.title,
                       maxLines: 2,
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            color: Colors.white,
-                          ),
+                      style: const TextStyle(color: Colors.white),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
                     ),
