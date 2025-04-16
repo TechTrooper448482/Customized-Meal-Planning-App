@@ -30,11 +30,9 @@ class MainDrawer extends StatelessWidget {
                 Icon(Icons.restaurant_menu_rounded,
                     size: 50, color: Theme.of(context).colorScheme.primary),
                 const SizedBox(width: 18),
-                Text(
+                const Text(
                   'Let\'s Cook!',
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
+                  style: TextStyle(fontSize: 18),
                 ),
               ],
             ),
@@ -45,11 +43,9 @@ class MainDrawer extends StatelessWidget {
               size: 26,
               color: Theme.of(context).colorScheme.onBackground,
             ),
-            title: Text(
+            title: const Text(
               'Meals',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                  ),
+              style: TextStyle(fontSize: 16),
             ),
             onTap: () {
               onSelectScreen('meals');
@@ -61,11 +57,9 @@ class MainDrawer extends StatelessWidget {
               size: 26,
               color: Theme.of(context).colorScheme.onBackground,
             ),
-            title: Text(
+            title: const Text(
               'Settings',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                  ),
+              style: TextStyle(fontSize: 16),
             ),
             onTap: () {
               onSelectScreen('settings');

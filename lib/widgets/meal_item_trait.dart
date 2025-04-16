@@ -10,13 +10,10 @@ class MealItemTrait extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: Theme.of(context).colorScheme.onBackground),
+        Icon(icon),
         const SizedBox(width: 6),
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
-              ),
         ),
       ],
     );
