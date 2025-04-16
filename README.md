@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Meals_app
 
 This project is a meal application which lets user to choose from different types of categories of meals. The application also includes functions such as:
@@ -7,3 +8,6 @@ This project is a meal application which lets user to choose from different type
 - Meal filtering functions.
 - Favorite meal options.
 - Animated transition between different meal items.
+=======
+# Customized-Meal-Planning-App
+>>>>>>> b693c861154b13e9b33e7d9e635396c27dfd4ca7
